@@ -516,12 +516,13 @@ body {
     .nav-menu {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
+        gap: 8px;
         margin-top: 10px;
+        margin-right: 15px;
     }
 
     .nav-menu a {
-        font-size: 0.9rem;
+        font-size: 14px;
     }
 
     /* SECTION SPACING */
