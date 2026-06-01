@@ -71,12 +71,12 @@ body {
 }
 
 .nav-menu a:active {
-  color: #ffffff;
+  color: #f59feb;
 }
 
 .nav-menu a.active {
-  color: #ffffff;
-  border-bottom: 2px solid #ffffff;
+  color: #000000;
+  border-bottom: 2px solid #fa70ea;
 }
 
 /*hero*/
