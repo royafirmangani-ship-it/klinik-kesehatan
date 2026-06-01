@@ -142,6 +142,23 @@
             </div>
         </div>
     </section>
+    <script>
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-menu a");
+
+        window.addEventListener("scroll", () => {
+        let current = "";
+        const scrollPos = window.scrollY + 120;
+        sections.forEach(s => {
+            const top = s.offsetTop;
+            const bottom = top + s.offsetHeight;
+            if (scrollPos >= top && scrollPos < bottom) current = s.id;
+        });
+        navLinks.forEach(a => {
+            a.classList.toggle("active", a.getAttribute("href") === "#" + current);
+        });
+        });
+    </script>
     <footer class="footer">
     <div class="container footer-content">
 
