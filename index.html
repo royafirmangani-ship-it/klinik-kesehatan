@@ -34,14 +34,14 @@
             </div>
         </div>
     </section>
-    <section id="about" class="about">
+    <section id="about" class="about reveal">
         <div class="container">
-            <h2>Tentang Kami</h2>
+            <h2 class="reveal">Tentang Kami</h2>
             <div class="about-content">
                 <div class="about-image">
                     <img src="about.jpg" alt="klinik">
                 </div>
-                <div class="about-text">
+                <div class="about-text reveal">
                     <p>
                     Kami menghadirkan pengalaman perawatan kecantikan yang menggabungkan
                     teknologi modern, tenaga ahli profesional, dan produk berkualitas untuk
@@ -51,7 +51,7 @@
                     menjadi partner terpercaya dalam perjalanan perawatan kecantikan Anda.
                     </p>
                 </div>
-                <div class="about-stats">
+                <div class="about-stats reveal">
                     <h3>Statistik</h3>
                     <ul>
                         <li>5+ Tahun Pengalaman</li>
@@ -62,29 +62,29 @@
             </div>
         </div>
     </section>
-    <section id="produk" class="produk">
+    <section id="produk" class="produk reveal">
         <div class="container">
-            <h2>Jenis Produk</h2>
+            <h2 class="reveal">Jenis Produk</h2>
             <div class="produk-grid">
-                <div class="produk-card">
+                <div class="produk-card reveal">
                     <img src="facialwash.jpeg" alt="facialwash" class="produk-img">
                     <h3>FACIAL CLEANSER</h3>
                     <P>Membersihkan wajah dari kotoran dan minyak berlebih tanpa membuat kulit kering.</P>
                     <p>Rp. 90.000,00</p>
                 </div>
-                <div class="produk-card">
+                <div class="produk-card reveal">
                     <img src="serum.jpeg" alt="serum" class="produk-img">
                     <h3>BRIGHTENING SERUM</h3>
                     <P>Membantu mencerahkan kulit dan menyamarkan noda hitam.</P>
                     <p>Rp. 150.000,00</p>
                 </div>
-                <div class="produk-card">
+                <div class="produk-card reveal">
                     <img src="cream.jpeg" alt="cream" class="produk-img">
                     <h3>ANTI AGING CREAM</h3>
                     <P>Membantu menjaga elastisitas kulit dan mengurangi garis halus.</P>
                     <p>Rp. 200.000,00</p>
                 </div>
-                <div class="produk-card">
+                <div class="produk-card reveal">
                     <img src="moisturizer.jpeg" alt="moisturizer" class="produk-img">
                     <h3>DAILY MOISTURIZER</h3>
                     <P>Menjaga kelembapan kulit dan memperkuat skin barrier.</P>
@@ -93,26 +93,26 @@
             </div>
         </div>
     </section>
-    <section id="layanan" class="layanan">
+    <section id="layanan" class="layanan reveal">
         <div class="container">
-            <h2>Jenis Pelayanan</h2>
+            <h2 class="reveal">Jenis Pelayanan</h2>
             <div class="layanan-grid">
-                <div class="layanan-card">
+                <div class="layanan-card reveal">
                     <img src="layanan1.png" alt="layanan1" class="layanan-img">
                     <p>Membersihkan dan merawat kulit wajah agar tetap sehat, segar, dan bercahaya.</p>
                 </div>
-                <div class="layanan-card">
+                <div class="layanan-card reveal">
                     <img src="layanan2.png" alt="layanan3" class="layanan-img">
                     <p>Perawatan khusus untuk membantu mengurangi jerawat, bekas jerawat, dan kemerahan.</p>
                 </div>
-                <div class="layanan-card">
+                <div class="layanan-card reveal">
                     <img src="layanan3.png" alt="layanan3" class="layanan-img">
                     <p>Membantu mencerahkan kulit kusam dan meratakan warna kulit.</p>
                 </div>
             </div>
         </div>
     </section>
-    <section id="contact" class="contact">
+    <section id="contact" class="contact reveal">
         <div class="container">
             <h2>Hubungi Kami</h2>
             <p class="contact-desc">
@@ -158,6 +158,14 @@
             a.classList.toggle("active", a.getAttribute("href") === "#" + current);
         });
         });
+        const revealEls = document.querySelectorAll(".reveal");
+        const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add("visible");
+        });
+        }, { threshold: 0.15 });
+
+        revealEls.forEach(el => observer.observe(el));
     </script>
     <footer class="footer">
     <div class="container footer-content">
